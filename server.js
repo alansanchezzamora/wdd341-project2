@@ -3,7 +3,7 @@ const mongodb = require("./data/database");
 const bodyParser = require("body-parser");
 const app = express();
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 //routes work accross sites
