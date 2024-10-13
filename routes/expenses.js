@@ -3,6 +3,7 @@ const router = express.Router();
 const utilities = require("../utils");
 
 const { expenseValidation, validate } = require("../utils/validation.js");
+const { isAuthenticated } = require("../middleware/authenticate.js");
 
 const expensesController = require("../controllers/expenses");
 
@@ -12,6 +13,7 @@ router.get("/:id", utilities.handleErrors(expensesController.getSingle));
 
 router.post(
   "/",
+  isAuthenticated,
   expenseValidation(),
   validate,
   utilities.handleErrors(expensesController.createExpense)
@@ -19,11 +21,16 @@ router.post(
 
 router.put(
   "/:id",
+  isAuthenticated,
   expenseValidation(),
   validate,
   utilities.handleErrors(expensesController.updateExpense)
 );
 
-router.delete("/:id", utilities.handleErrors(expensesController.deleteExpense));
+router.delete(
+  "/:id",
+  isAuthenticated,
+  utilities.handleErrors(expensesController.deleteExpense)
+);
 
 module.exports = router;
