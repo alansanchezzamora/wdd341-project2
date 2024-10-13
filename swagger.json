@@ -67,44 +67,54 @@
         }
       },
       "put": {
-        "description": "Update an entry by ID",
+        "tags": [
+          "Expenses"
+        ],
+        "description": "",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
             "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "field1": {
-                    "type": "string"
-                  },
-                  "field2": {
-                    "type": "number"
-                  }
+              "type": "object",
+              "properties": {
+                "date": {
+                  "example": "any"
                 },
-                "required": [
-                  "field1"
-                ]
+                "account": {
+                  "example": "any"
+                },
+                "amount": {
+                  "example": "any"
+                },
+                "category": {
+                  "example": "any"
+                },
+                "method": {
+                  "example": "any"
+                },
+                "payee": {
+                  "example": "any"
+                },
+                "purpose": {
+                  "example": "any"
+                }
               }
             }
           }
-        },
+        ],
         "responses": {
-          "200": {
-            "description": "Successful update"
+          "204": {
+            "description": "No Content"
           },
-          "422": {
-            "description": "Unprocessable Entity"
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
