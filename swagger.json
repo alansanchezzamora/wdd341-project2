@@ -67,16 +67,42 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Update an entry by ID",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "field1": {
+                    "type": "string"
+                  },
+                  "field2": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "field1"
+                ]
+              }
+            }
+          }
+        },
         "responses": {
+          "200": {
+            "description": "Successful update"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
