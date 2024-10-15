@@ -8,7 +8,7 @@
   "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/": {
@@ -33,6 +33,9 @@
     },
     "/expenses/": {
       "get": {
+        "tags": [
+          "Expenses"
+        ],
         "description": "",
         "responses": {
           "default": {
@@ -41,7 +44,42 @@
         }
       },
       "post": {
+        "tags": [
+          "Expenses"
+        ],
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "example": "any"
+                },
+                "account": {
+                  "example": "any"
+                },
+                "amount": {
+                  "example": "any"
+                },
+                "category": {
+                  "example": "any"
+                },
+                "method": {
+                  "example": "any"
+                },
+                "payee": {
+                  "example": "any"
+                },
+                "purpose": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "422": {
             "description": "Unprocessable Entity"
@@ -51,6 +89,9 @@
     },
     "/expenses/{id}": {
       "get": {
+        "tags": [
+          "Expenses"
+        ],
         "description": "",
         "parameters": [
           {
@@ -67,6 +108,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Expenses"
+        ],
         "description": "",
         "parameters": [
           {
@@ -74,15 +118,51 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "example": "any"
+                },
+                "account": {
+                  "example": "any"
+                },
+                "amount": {
+                  "example": "any"
+                },
+                "category": {
+                  "example": "any"
+                },
+                "method": {
+                  "example": "any"
+                },
+                "payee": {
+                  "example": "any"
+                },
+                "purpose": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
-          "422": {
-            "description": "Unprocessable Entity"
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "delete": {
+        "tags": [
+          "Expenses"
+        ],
         "description": "",
         "parameters": [
           {
@@ -101,6 +181,9 @@
     },
     "/income/": {
       "get": {
+        "tags": [
+          "Income"
+        ],
         "description": "",
         "responses": {
           "default": {
@@ -109,6 +192,32 @@
         }
       },
       "post": {
+        "tags": [
+          "Income"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "example": "any"
+                },
+                "account": {
+                  "example": "any"
+                },
+                "amount": {
+                  "example": "any"
+                },
+                "source": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "description": "",
         "responses": {
           "422": {
@@ -119,6 +228,9 @@
     },
     "/income/{id}": {
       "get": {
+        "tags": [
+          "Income"
+        ],
         "description": "",
         "parameters": [
           {
@@ -135,13 +247,31 @@
         }
       },
       "put": {
+        "tags": [
+          "Income"
+        ],
         "description": "",
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "example": "any"
+                },
+                "account": {
+                  "example": "any"
+                },
+                "amount": {
+                  "example": "any"
+                },
+                "source": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -151,6 +281,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Income"
+        ],
         "description": "",
         "parameters": [
           {
