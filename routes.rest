@@ -72,3 +72,82 @@ Content-Type: application/json
 
 ### Delete Income Entry
 DELETE http://localhost:3000/income/67020a96c6f948c1b3086926 HTTP/1.1
+
+
+
+
+///////////////////////////// PROD - Expenses //////////////////////////////////////////
+### Get all users
+GET https://wdd341-project2.onrender.com/expenses
+
+###Get user by id
+GET https://wdd341-project2.onrender.com/670209a6c6f948c1b3086925
+
+### POST
+POST https://wdd341-project2.onrender.com/expenses HTTP/1.1
+Content-Type: application/json
+
+{
+    "date" : "12/12/12",
+  "account": "Savings",
+  "amount": 400,
+  "category": "food",
+  "method": "debit",
+  "payee": "Amazon",
+  "purpose": "Laila Food"
+}
+
+### PUT
+PUT https://wdd341-project2.onrender.com/expenses/670209a6c6f948c1b3086925 HTTP/1.1
+Content-Type: application/json
+
+{
+    "date": "10/05/24",
+    "account": "Savings",
+    "amount": 900,
+    "category": "Groceries",
+    "method": "Debit",
+    "payee": "HEB",
+    "purpose": "Food for the week"
+}
+
+### DELETE
+DELETE https://wdd341-project2.onrender.com/expenses/6705f2b3133ea1de170ebf00 HTTP/1.1
+
+
+
+
+//////////////////////////////PROD INCOME ENDPOINT///////////////////////////////
+### Get all income
+GET https://wdd341-project2.onrender.com/income 
+
+### Get one
+GET https://wdd341-project2.onrender.com/income/67045553761ba75e1c3d33d1
+
+### CREATE INCOME ENTRY
+POST https://wdd341-project2.onrender.com/income HTTP/1.1
+Content-Type: application/json
+
+{
+  "date" : "10/07/2024",
+  "account" : "bbva debit",
+  "amount" : 10000,
+  "source" : "salary"
+}
+
+### Update Entry
+PUT https://wdd341-project2.onrender.com/income/67045553761ba75e1c3d33d1 HTTP/1.1
+Content-Type: application/json
+
+{
+
+  "date" : "10/07/2024",
+  "account" : "hsbc debit",
+  "amount" : 12,
+  "source" : "salary"
+ 
+}
+
+### Delete Income Entry
+DELETE https://wdd341-project2.onrender.com/income/67020a96c6f948c1b3086926 HTTP/1.1
+

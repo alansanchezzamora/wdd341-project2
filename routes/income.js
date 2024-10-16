@@ -5,6 +5,7 @@ const { incomeValidation, validate } = require("../utils/validation.js");
 const utilities = require("../utils");
 const { isAuthenticated } = require("../utils/authenticate.js");
 
+
 router.get("/", utilities.handleErrors(incomeController.getAll));
 
 router.get("/:id", utilities.handleErrors(incomeController.getSingle));
