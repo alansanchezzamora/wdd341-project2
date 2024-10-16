@@ -1,10 +1,10 @@
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
+const incomeController = require("../controllers/income");
+
 const { incomeValidation, validate } = require("../utils/validation.js");
 const utilities = require("../utils");
+const { isAuthenticated } = require("../utils/authenticate.js");
 
-const { isAuthenticated } = require("../middleware/authenticate.js");
-const incomeController = require("../controllers/income");
 
 router.get("/", utilities.handleErrors(incomeController.getAll));
 

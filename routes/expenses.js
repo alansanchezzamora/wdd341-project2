@@ -1,11 +1,8 @@
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 const utilities = require("../utils");
-
 const { expenseValidation, validate } = require("../utils/validation.js");
-const { isAuthenticated } = require("../middleware/authenticate.js");
-
 const expensesController = require("../controllers/expenses");
+const { isAuthenticated } = require("../utils/authenticate.js");
 
 router.get("/", utilities.handleErrors(expensesController.getAll));
 
